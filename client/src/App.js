@@ -11,12 +11,30 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <ToastContainer />
+        <div className='header px-3 py-3'>
+          <Link to={'/'} ><button className='btn btn-primary'>Home</button></Link>
+          <Link to={'/user'}>
+            <button class="btn btn-primary">
+              User
+            </button>
+          </Link>
+          <Link to={'/user/add'}>
+            <button className='btn btn-primary'>
+              Add User
+            </button>
+          </Link>
+          <Link to={'/user/edit/:parameter'}>
+            <button className='btn btn-primary'>
+              Edit
+            </button>
+          </Link>
+        </div>
+        <ToastContainer />
         <Routes>
-          <Route exact path="/home" Component={Home} />
-          <Route exact path='/user' Component={UserList} />
-          <Route exact path="/user/add" Component={AddUser} />
-          <Route exact path="/user/edit/:parameter" Component={UpdateUser} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path='/user' element={<UserList />} />
+          <Route exact path="/user/add" element={<AddUser />} />
+          <Route exact path="/user/edit/:parameter" element={<UpdateUser />} />
         </Routes>
       </Router>
     </div>
