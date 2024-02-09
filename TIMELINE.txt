@@ -9,4 +9,4 @@ REACTJS-REDUX-CREATE-READ-UPDATE-DELETE-JSON-API
 -> UserListing
 using sfc - stateless functiuon components
 3. create folder redux with a files of 
--> action, reducers and types and store
+-> action, reducers and Actiontypes and store
