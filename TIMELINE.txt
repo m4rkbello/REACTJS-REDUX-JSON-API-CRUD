@@ -30,4 +30,7 @@ redux-logger
 9. INSTALL JSON-SERVER FOR TESTING 
 npm i -g json-server - globally
 npm i json-server --save-dev - locally(kani atoa for testing)
-10. 
+ npm install -g json-server@0.16.3
+10. RUN JSON-SERVER API 
+->create a file db.json
+->json-server --watch src/Data/db.json --port 8000
