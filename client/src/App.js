@@ -6,25 +6,28 @@ import AddUser from './Components/AddUser';
 import UserList from './Components/UserList';
 import UpdateUser from './Components/UpdateUser';
 import { ToastContainer } from 'react-toastify';
+import NavBar from './Components/Reusable/NavBar';
+
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <div className='header px-3 py-3'>
-          <Link to={'/'} ><button className='btn btn-primary'>Home</button></Link>
+      <NavBar />
+        <div className='header'>
+          <Link to={'/'} ><button className='btn btn-primary p-2 m-2'>Home</button></Link>
           <Link to={'/user'}>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary btn btn-primary p-2 m-2">
               User
             </button>
           </Link>
           <Link to={'/user/add'}>
-            <button className='btn btn-primary'>
+            <button className='btn btn-primary btn btn-primary p-2 m-2'>
               Add User
             </button>
           </Link>
           <Link to={'/user/edit/:parameter'}>
-            <button className='btn btn-primary'>
+            <button className='btn btn-primary btn btn-primary p-2 m-2'>
               Edit
             </button>
           </Link>
