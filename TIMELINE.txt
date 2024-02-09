@@ -21,4 +21,13 @@ using sfc - stateless functiuon components
 7. HTTP REQUEST-PROVIDER - AXIOS 
 -> npm i axios 
 8. INSTALL REDUX TOOLS AND PACKAGES 
--> npm i redux react-redux redux-thunk redux-logger @reduxjs/toolkit
+-> npm i 
+redux
+react-redux
+redux-thunk
+redux-logger
+@reduxjs/toolkit
+9. INSTALL JSON-SERVER FOR TESTING 
+npm i -g json-server - globally
+npm i json-server --save-dev - locally(kani atoa for testing)
+10. 
