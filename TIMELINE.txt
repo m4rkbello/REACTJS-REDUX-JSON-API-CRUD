@@ -1,4 +1,12 @@
 REACTJS-REDUX-CREATE-READ-UPDATE-DELETE-JSON-API 
 
 1.CREATE-REACT-APP 
-->npx create-react-app 
+->npx create-react-app client
+2. add folder for components
+-> Home, 
+-> AddUser, 
+-> UpdateUser, 
+-> UserListing
+using sfc - stateless functiuon components
+3. create folder redux with a files of 
+-> action, reducers and types and store
