@@ -54,7 +54,7 @@ const UpdateUser = () => {
             <div className="col-12 navbar-color">
 
             <div className="card-header">
-                <h1 className="addUserText">Add User!</h1>
+                <h1 className="addUserText">UPDATE USER!</h1>
             </div>
                 <form onSubmit={handleSubmitUpdateUser} >
                     <center>
