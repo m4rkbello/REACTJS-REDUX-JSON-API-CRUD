@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 //GIIMPORT ANG ACTION-TYPES
-import { ADD_USER, DELETE_USER, FAILED_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionTypes"
+import { ADD_USER, DELETE_USER, FAILED_REQUEST, GET_USER_LIST, GET_USER_OBJECT_DATA, MAKE_REQUEST, UPDATE_USER } from "./ActionTypes"
 
 //NAG FETCH UG REQUEST
 export const makeRequest =()=>{
@@ -46,6 +46,23 @@ export const addUser =()=>{
         type: ADD_USER
     }
 }
+
+
+//MAG UPDATE UG USER
+export const updateUser =()=>{
+    return{
+        type: UPDATE_USER
+    }
+}
+
+//MAGFETCH UG DATA SA USER
+export const getUserObjectData =(data)=>{
+    return{
+        type: GET_USER_OBJECT_DATA,
+        payload: data
+    }
+}
+
 
 
 //DISPATCH FUNCTION PARAMAGFETCH UG DATA!
@@ -93,8 +110,45 @@ export const DispatchAddUser =(data)=> {
             dispatch(makeRequest());
             axios.post('http://localhost:8000/user/',data)
             .then(res=>{
+                dispatch(updateUser());
+                toast.success('User Updated successfully!');
+            }).catch(err=>{
+                dispatch(failRequest(err.message))
+            })
+        // }, 2000);
+
+    }
+}
+
+
+//DISPATCH FUNCTION PARA MAG DELETE UG USER
+export const ActionUpdateUser =(data, code)=> {
+    return (dispatch) => {
+        // setTimeout(() => {
+    
+            dispatch(makeRequest());
+            axios.put('http://localhost:8000/user/'+code,data)
+            .then(res=>{
                 dispatch(addUser());
                 toast.success('User Added successfully!');
+            }).catch(err=>{
+                dispatch(failRequest(err.message))
+            })
+        // }, 2000);
+
+    }
+}
+
+//DISPATCH FUNCTION PARAMAGFETCH UG DATA!
+export const FetchUserObjData =(markbello)=> {
+    return (dispatch) => {
+        // setTimeout(() => {
+    
+            dispatch(makeRequest());
+            axios.get('http://localhost:8000/user/' + markbello)
+            .then(res=>{
+                const userlist=res.data;
+                dispatch(getUserObjectData(userlist));
             }).catch(err=>{
                 dispatch(failRequest(err.message))
             })

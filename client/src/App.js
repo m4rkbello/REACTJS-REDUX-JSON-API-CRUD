@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/home" element={<Home />} />
           <Route exact path='/user' element={<UserList />} />
           <Route exact path="/user/add" element={<AddUser />} />
-          <Route exact path="/user/edit/:parameter" element={<UpdateUser />} />
+          <Route exact path="/user/edit/:markbello" element={<UpdateUser />} />
         </Routes>
       </Router>
     </div>
