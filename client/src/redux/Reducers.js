@@ -8,8 +8,6 @@ const initialState ={
     errmessage:''
 }
 
-
-
 //return value dapat true
 export const Reducer =(state=initialState, action) => {
     switch(action.type){
@@ -29,12 +27,10 @@ export const Reducer =(state=initialState, action) => {
                 ...state,
                 loading: false,
                 errmessage: '',
+                userlist: action.payload,
                 userobj:{}
 
             }
-
-
-
         default: return state
     }
 }

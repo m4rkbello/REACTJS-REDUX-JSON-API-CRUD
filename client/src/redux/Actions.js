@@ -1,3 +1,6 @@
+import axios from 'axios';
+
+
 //GIIMPORT ANG ACTION-TYPES
 import { FAILED_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionTypes"
 
@@ -24,3 +27,25 @@ export const getUserList =(data)=>{
         payload: data
     }
 }
+
+
+
+//DISPATCH 
+export const FetchUserList =()=> {
+    return (dispatch) => {
+        // setTimeout(() => {
+    
+            dispatch(makeRequest());
+            axios.get('http://localhost:8000/user')
+            .then(res=>{
+                const userlist=res.data;
+                dispatch(getUserList(userlist));
+            }).catch(err=>{
+                dispatch(failRequest(err.message))
+            })
+        // }, 2000);
+
+    }
+}
+
+

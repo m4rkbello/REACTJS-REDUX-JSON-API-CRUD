@@ -1,23 +1,12 @@
-// import { configureStore, combineReducers, getDefaultMiddleware } from "@reduxjs/toolkit";
-import { Reducer } from "./Reducers";
-// import {thunk} from "redux-thunk";
-// import logger from "redux-logger";
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { Reducer } from '../redux/Reducers'; // Assuming Reducer is exported as default from './Reducers'
 
-// const rootreducer = combineReducers({user:Reducer});
-// const Store=configureStore({reducer:rootreducer, middleware: [thunk, logger]})
+const rootReducer = combineReducers({
+  user: Reducer, 
+});
 
-
-// const store = configureStore({
-//     reducer: rootreducer,
-//     middleware: middleware, // Pass the middleware callback function here
-//   });
-  
-
-
-
-import { configureStore } from '@reduxjs/toolkit'
-
-
-const store = configureStore({ reducer: Reducer })
+const store = configureStore({
+  reducer: rootReducer, 
+});
 
 export default store;

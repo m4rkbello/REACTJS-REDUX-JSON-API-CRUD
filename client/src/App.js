@@ -15,22 +15,25 @@ function App() {
       <Router>
       <NavBar />
         <div className='header'>
-          <Link to={'/'} ><button className='btn btn-primary p-2 m-2'>Home</button></Link>
-          <Link to={'/user'}>
-            <button class="btn btn-primary btn btn-primary p-2 m-2">
-              User
-            </button>
-          </Link>
-          <Link to={'/user/add'}>
-            <button className='btn btn-primary btn btn-primary p-2 m-2'>
-              Add User
-            </button>
-          </Link>
-          <Link to={'/user/edit/:parameter'}>
-            <button className='btn btn-primary btn btn-primary p-2 m-2'>
-              Edit
-            </button>
-          </Link>
+        {/**
+        
+        <Link to={'/'} ><button className='btn btn-primary p-2 m-2'>Home</button></Link>
+        <Link to={'/user'}>
+          <button className="btn btn-primary btn btn-primary p-2 m-2">
+            User
+          </button>
+        </Link>
+        <Link to={'/user/add'}>
+          <button className='btn btn-primary btn btn-primary p-2 m-2'>
+            Add User
+          </button>
+        </Link>
+        <Link to={'/user/edit/:parameter'}>
+          <button className='btn btn-primary btn btn-primary p-2 m-2'>
+            Edit
+          </button>
+        </Link>
+          */}
         </div>
         <ToastContainer />
         <Routes>
