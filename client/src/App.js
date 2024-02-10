@@ -12,6 +12,7 @@ import NavBar from './Components/Reusable/NavBar';
 function App() {
   return (
     <div className="App">
+    <ToastContainer />
       <Router>
       <NavBar />
         <div className='header'>
@@ -35,7 +36,7 @@ function App() {
         </Link>
           */}
         </div>
-        <ToastContainer />
+      
         <Routes>
           <Route exact path="/home" element={<Home />} />
           <Route exact path='/user' element={<UserList />} />

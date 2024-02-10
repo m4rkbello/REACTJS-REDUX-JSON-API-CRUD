@@ -1,39 +1,11 @@
 {
-    "user":[
-        {
-            "id": 1,
-            "name": "m4rkbello",
-            "role": "Alaw utsbo tig lung-ag",
-            "email":"m4rk",
-            "phone": "99999999999"
-        },
-        {
-            "id": 2,
-            "name": "choi",
-            "role": "E wallpaper",
-            "email":"lorem@dev",
-            "phone": "7343464"
-        },
-        {
-            "id": 3,
-            "name": "lorem",
-            "role": "dugay pasabton",
-            "email":"m4rk",
-            "phone": "345345"
-        },
-        {
-            "id": 4,
-            "name": "marama",
-            "role": "Naay plano pero dili ka provide",
-            "email":"loki@dev",
-            "phone": "99999999456456465999"
-        },
-        {
-            "id": 5,
-            "name": "bawi nextlayf",
-            "role": "Di kabalo",
-            "email":"oha@dev",
-            "phone": "5645687"
-        }
-    ]
+  "user": [
+    {
+      "id": 9,
+      "name": "m4rkbello",
+      "role": "Alaw utsbo tig lung-ag",
+      "email": "m4rk",
+      "phone": "99999999999"
+    }
+  ]
 }

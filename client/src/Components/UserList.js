@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
-import { FetchUserList } from "../redux/Actions";
+import { FetchUserList, RemoveUser, } from "../redux/Actions";
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const UserList = (props) => {
     console.log("DATA SA CHOI", props);
@@ -10,13 +13,24 @@ const UserList = (props) => {
         props.loaduser();
     }, [])
 
+    const handleDelete =(code) =>{
+        if(window.confirm("DO YOU WANT TO DELETE?")){
+            props.removeuser(code);
+            props.loaduser();
+            toast.success('User has been deleted Successfully!'); 
+        }
+    }
+
 
     return (
         //argument kung galoading ba or wala 
         props.user.loading ? <div><h1>Loading...paghulat!</h1></div> : props.user.errmessage ? <div>{props.user.errmessage}</div>
             :
             <div>
+            <ToastContainer />
+      
                 <div className="col-8 text mx-auto">
+               
                     <div className="card-header userlist"></div>
                     <h1 className='userHeader'>User List!</h1>
                     <div className="buttonAdd">
@@ -48,8 +62,8 @@ const UserList = (props) => {
 
                                             <Link to={'/user/edit/'+item.id} className="btn btn-warning">Edit</Link>
 
-                                            <button to='user/edit/:parameter' className="btn btn-danger">Delete</button>
-
+                                            <button onClick={()=>{handleDelete(item.id)}} className="btn btn-danger">Delete</button>
+                                        
                                         </td>
                                     </tr>
 
@@ -73,7 +87,8 @@ const mapToStateToProps = (state) => {
 //maglabayg data sa serverside
 const mapDispatchToProps = (dispatch) => {
     return {
-        loaduser: () => dispatch(FetchUserList())
+        loaduser: () => dispatch(FetchUserList()),
+        removeuser: (code) =>dispatch(RemoveUser(code))
     }
 }
 
