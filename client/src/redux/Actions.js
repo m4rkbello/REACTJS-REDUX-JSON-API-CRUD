@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 //GIIMPORT ANG ACTION-TYPES
-import { DELETE_USER, FAILED_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionTypes"
+import { ADD_USER, DELETE_USER, FAILED_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionTypes"
 
 //NAG FETCH UG REQUEST
 export const makeRequest =()=>{
@@ -40,8 +40,15 @@ export const deleteUser =()=>{
 } 
 
 
+//MAG ADD UG USER
+export const addUser =()=>{
+    return{
+        type: ADD_USER
+    }
+}
 
-//DISPATCH MAGFETCH UG DATA!
+
+//DISPATCH FUNCTION PARAMAGFETCH UG DATA!
 export const FetchUserList =()=> {
     return (dispatch) => {
         // setTimeout(() => {
@@ -59,7 +66,7 @@ export const FetchUserList =()=> {
     }
 }
 
-//DISPATCH MAG DELETE UG USER
+//DISPATCH FUNCTION PARA MAG DELETE UG USER
 export const RemoveUser =(code)=> {
     return (dispatch) => {
         // setTimeout(() => {
@@ -69,6 +76,25 @@ export const RemoveUser =(code)=> {
             .then(res=>{
                 dispatch(deleteUser());
                 toast.success('User deleted successfully!');
+            }).catch(err=>{
+                dispatch(failRequest(err.message))
+            })
+        // }, 2000);
+
+    }
+}
+
+
+//DISPATCH FUNCTION PARA MAG DELETE UG USER
+export const DispatchAddUser =(data)=> {
+    return (dispatch) => {
+        // setTimeout(() => {
+    
+            dispatch(makeRequest());
+            axios.post('http://localhost:8000/user/',data)
+            .then(res=>{
+                dispatch(addUser());
+                toast.success('User Added successfully!');
             }).catch(err=>{
                 dispatch(failRequest(err.message))
             })

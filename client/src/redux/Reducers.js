@@ -1,4 +1,4 @@
-import { DELETE_USER, FAILED_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionTypes"
+import { ADD_USER, DELETE_USER, FAILED_REQUEST, GET_USER_LIST, MAKE_REQUEST } from "./ActionTypes"
 
 //initializer
 const initialState ={
@@ -34,6 +34,11 @@ export const Reducer =(state=initialState, action) => {
             return{
                 ...state,
                 loading: false,
+            }
+        case ADD_USER:
+            return{
+                ...state,
+                loading: false 
             }
         default: return state
     }
